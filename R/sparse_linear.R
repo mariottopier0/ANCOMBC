@@ -2,6 +2,8 @@
                           n_cv, thresh_hard, max_p) {
     # Thresholding
     mat_thresh = function(mat, th, soft){
+        mat[is.na(mat)] = 0
+        mat[is.nan(mat)] = 0
         mat_sign = sign(mat)
         mat_th = mat
         mat_th[abs(mat) <= th] = 0
